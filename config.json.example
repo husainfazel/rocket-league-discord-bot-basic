@@ -1,0 +1,9 @@
+{
+	"discord_token": "",
+    "mysql": {
+        "host": "localhost",
+        "username": "root",
+        "password": "",
+        "database": "slips_discord"
+    }
+}
