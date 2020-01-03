@@ -118,7 +118,27 @@ client.on('ready', async () => {
 	  	 * ********************************************
 	  	 */
 		if (msg.content === '!nextevent') {
-	    	msg.reply('The next Slips tournament is on 25th January - 26th January 2019 at 7pm ET.');
+	    	msg.reply('The next Slips tournament is on 25th January - 26th January 2020 at 7pm ET.');
+	  	}
+
+	  	if (msg.content === '!registeredteams') {
+	  		let teamList = await models.Team.findAll();
+	  		var msg = 'Teams registered right now \n';
+
+	  		for(var team in teamList) {
+	  			msg += team.name + '\n';
+	  		}
+	    	msg.reply(msg);
+	  	}
+
+	  	if (msg.content === '!registeredplayers') {
+	  		let playersList = await models.Player.findAll();
+	  		var msg = 'Players registered right now \n';
+
+	  		for(var player in playersList) {
+	  			msg += player.name + '\n';
+	  		}
+	    	msg.reply(msg);
 	  	}
 
 	  	/**********************************************
