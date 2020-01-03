@@ -137,7 +137,7 @@ client.on('ready', async () => {
 
 	  		for(var player of playersList) {
 	  			if(player.registration_status == 1) {
-	  				message += player.name + '\n';
+	  				message += player.name + '-' + player.bio + '\n';
 	  			}
 	  		}
 	    	msg.reply(message);
