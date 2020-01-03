@@ -123,22 +123,22 @@ client.on('ready', async () => {
 
 	  	if (msg.content === '!registeredteams') {
 	  		let teamList = await models.Team.findAll();
-	  		var msg = 'Teams registered right now \n';
+	  		var message = 'Teams registered right now \n';
 
 	  		for(var team in teamList) {
-	  			msg += team.name + '\n';
+	  			message += team.name + '\n';
 	  		}
-	    	msg.reply(msg);
+	    	msg.reply(message);
 	  	}
 
 	  	if (msg.content === '!registeredplayers') {
 	  		let playersList = await models.Player.findAll();
-	  		var msg = 'Players registered right now \n';
+	  		var message = 'Players registered right now \n';
 
 	  		for(var player in playersList) {
-	  			msg += player.name + '\n';
+	  			message += player.name + '\n';
 	  		}
-	    	msg.reply(msg);
+	    	msg.reply(message);
 	  	}
 
 	  	/**********************************************
