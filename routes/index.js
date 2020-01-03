@@ -125,7 +125,7 @@ client.on('ready', async () => {
 	  		let teamList = await models.Team.findAll();
 	  		var message = 'Teams registered right now \n';
 
-	  		for(var team in teamList) {
+	  		for(var team of teamList) {
 	  			message += team.name + '\n';
 	  		}
 	    	msg.reply(message);
@@ -135,7 +135,7 @@ client.on('ready', async () => {
 	  		let playersList = await models.Player.findAll();
 	  		var message = 'Players registered right now \n';
 
-	  		for(var player in playersList) {
+	  		for(var player of playersList) {
 	  			message += player.name + '\n';
 	  		}
 	    	msg.reply(message);
