@@ -118,7 +118,7 @@ client.on('ready', async () => {
 	  	 * ********************************************
 	  	 */
 		if (msg.content === '!nextevent') {
-	    	msg.reply('The next Slips tournament is on 25th January - 26th January 2020 at 7pm ET.');
+	    	msg.reply('The next Slips tournament is on 8th February - 9th February January 2020 at 7pm ET.');
 	  	}
 
 	  	if (msg.content === '!registeredteams') {
@@ -176,7 +176,7 @@ client.on('ready', async () => {
 					try {
 						var response = await new Promise(async function(resolve, reject) {
 							const filter = m => true;
-							await dm.awaitMessages(filter, { max: 1, time: 1800000, errors: ['time'] })
+							await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 1800000, errors: ['time'] })
 							  .then(collected => {
 							  	var msg = collected.entries().next().value[1];
 							  	switch(count) {
@@ -264,7 +264,7 @@ client.on('ready', async () => {
 					try {
 						var response = await new Promise(async function(resolve, reject) {
 							const filter = m => true;
-							await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+							await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 							  .then(collected => {
 							  	var msg = collected.entries().next().value[1];
 							  	switch(count) {
@@ -346,7 +346,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is player one's discord username? Including the discriminator (e.g. 6_16Fun#2786)**")
 				var player1 = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var player1 = collected.entries().next().value[1].content;
 					  	let playerList = await models.Player.findAll({ where: { discord_username: player1 }});
@@ -375,7 +375,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is player two's discord username? Including the discriminator (e.g. 6_16Fun#2786)**")
 				var player2 = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var player2 = collected.entries().next().value[1].content;
 					  	let playerList = await models.Player.findAll({ where: { discord_username: player2 }});
@@ -404,7 +404,7 @@ client.on('ready', async () => {
 	  			await dm.send("**Who won? `1` or `2`**")
 				var gameResult = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var gameResult = collected.entries().next().value[1].content;
 					  	console.log(gameResult)
@@ -552,7 +552,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is your 1st team member's Discord username (including the #1234 part please!)**")
 				var playerOne = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var discordUsername = collected.entries().next().value[1].content;
 					  	if(discordUsername == callingPlayer.discord_username) {
@@ -588,7 +588,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is your 2nd team member's Discord username (including the #1234 part please!)**")
 				var playerTwo = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var discordUsername = collected.entries().next().value[1].content;
 
@@ -632,7 +632,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is your team name?**")
 				var teamName = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var teamName = collected.entries().next().value[1].content;
 					  	resolve(teamName);
@@ -654,7 +654,7 @@ client.on('ready', async () => {
 	  			await dm.send("**Now upload your team logo (it must be 750px x 750px)**")
 				var logo = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var msg = collected.entries().next().value[1];
 					  	var attachment = msg.attachments.entries().next().value[1];
@@ -716,7 +716,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is Team One's Name (as on leaderboard)**")
 				var team1 = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var team1 = collected.entries().next().value[1].content;
 					  	let teamList = await models.Team.findAll({ where: { name: team1 }});
@@ -745,7 +745,7 @@ client.on('ready', async () => {
 	  			await dm.send("**What is Team Two's Name (as on leaderboard)**")
 				var team2 = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var team2 = collected.entries().next().value[1].content;
 					  	let teamList = await models.Team.findAll({ where: { name: team2 }});
@@ -774,7 +774,7 @@ client.on('ready', async () => {
 	  			await dm.send("**Who won? `1` or `2`**")
 				var gameResult = await new Promise(async function(resolve, reject) {
 					const filter = m => true;
-					await dm.awaitMessages(filter, { max: 1, time: 180000, errors: ['time'] })
+					await dm.awaitMessages(filter, { max: 1, maxMatches: 1, time: 180000, errors: ['time'] })
 					  .then(async collected => {
 					  	var gameResult = collected.entries().next().value[1].content;
 					  	console.log(gameResult)
