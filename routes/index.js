@@ -333,7 +333,7 @@ client.on('ready', async () => {
 	  	 */
 	  	if (msg.content === '!inputsoloresult') {
 
-	  		let allowedUsernames = ['husainfazel#0001', '6_16Fun#2786','AlfredoSaucin#9232','Buttknuckle#9154','Imbaer#1337', 'Pubbies_Give_Me_Sniffles#4283', 'TheGJ90#4290'];
+	  		let allowedUsernames = ['husainfazel#0001', '6_16Fun#2786','AlfredoSaucin#9232','Buttknuckle#9154','Imbaer#1337', 'Pubbies_Give_Me_Sniffles#4283', 'Xain#3803', 'TheGJ90#4290'];
 
 	  		if(allowedUsernames.indexOf(discordUsername) === -1) {
 	  			await msg.reply('You are not allowed to use this command! :angry:');
@@ -703,7 +703,7 @@ client.on('ready', async () => {
 	  	 */
 	  	if (msg.content === '!inputteamresult') {
 
-	  		let allowedUsernames = ['husainfazel#0001', '6_16Fun#2786','AlfredoSaucin#9232','Buttknuckle#9154','Imbaer#1337', 'Pubbies_Give_Me_Sniffles#4283', 'TheGJ90#4290'];
+	  		let allowedUsernames = ['husainfazel#0001', '6_16Fun#2786','AlfredoSaucin#9232','Buttknuckle#9154','Imbaer#1337', 'Pubbies_Give_Me_Sniffles#4283', 'Xain#3803', 'TheGJ90#4290'];
 
 	  		if(allowedUsernames.indexOf(discordUsername) === -1) {
 	  			await msg.reply('You are not allowed to use this command! :angry:');
